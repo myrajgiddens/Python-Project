@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button} from 'antd';
 
+
+
 import "./search.css";
 
 class Search extends Component {
@@ -18,7 +20,7 @@ handleSearch = () => {
 
 makeApiCall = searchInput => {
     //which url do i use here??
-    var searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
+    var searchUrl = `https://paper-api.alpaca.markets{searchInput}`;
     fetch(searchUrl)
     .then(response => {
         return response.json();
@@ -45,7 +47,7 @@ return (
                 {this.state.stocks.map((stock, index) =>(
                     <div class="single-stock" key="{index}">
                         <h2>{stock.strStock}</h2>
-                        <img src={stock.strStockThumb} alt="meal-thumbnail" />
+                    
                     </div>
                 ))}
             </div>   
